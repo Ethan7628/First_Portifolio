@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800;900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-a{
+
+a {
     color: white;
     text-decoration: none;
 }
-.navbar{
+
+.navbar {
     position: fixed;
     left: 0;
     top: 0;
@@ -25,203 +28,57 @@ a{
     animation-delay: 1.2s;
 }
 
-.navbar .logo{
+.navbar .logo {
     font-size: 30px;
     font-weight: 700;
 }
-.navbar ul{
+
+.navbar ul {
     display: flex;
 }
-.navbar ul li{
+
+.navbar ul li {
     list-style: none;
     margin-left: 35px;
 }
-.navbar ul li a{
+
+.navbar ul li a {
     font-size: 20px;
     font-weight: 500;
-    transition: .5s; 
-}
-
-.home{
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    padding: 60px 9% 0;
-    color: #fff;
-    gap: 50px;
-    visibility: hidden;
-    opacity: 0;
-    animation: show-content 1.5s linear forwards;
-    animation-delay: 1.5s;
-}
-.home-info h1{
-    font-size: 55px;
-}
-.home-info h2{
-    display: inline-block;
-    font-size: 35px;
-    margin-top: -10px;
-}
-.home-info p{
-    font-size: 16px;
-    margin: 10px 0 25px;
-}
-.home-info .btn-sci{
-    display: flex;
-    align-items: center;
-} 
-.home-info h2 span{
-    position: relative;
-    display: inline-block;
-    color: transparent;
-    -webkit-text-stroke: 1px #7cf03d;
-    animation: display-text 16s linear infinite;
-    animation-delay: calc(-4s * var(--i));
-}
-
-.btn{
-    display: inline-block;
-    padding: 10px 30px;
-    background: #7cf03d;
-    border: 2px #7cf03d solid;
-    border-radius: 40px;
-    box-shadow: 0 0 10px #7cf03d;
-    font-size: 16px;
-    color: #1f242d;
-    font-size: 600;
     transition: .5s;
 }
-.btn:hover{
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
     color: #7cf03d;
-    background: transparent;
-    box-shadow: none;
-}
-.home-info .btn-sci .sci{
-    margin-left: 20px;
-}
-.home-info .btn-sci .sci a{
-    display: inline-flex;
-    padding: 8px;
-    border: 2px solid #7cf03d;
-    border-radius: 50%;
-    font-size: 20px;
-    color: #7cf03d;
-    margin: 0 8px;
-    transition: .5s;
-}
-.home-info .btn-sci .sci a:hover{
-    background: #7cf03d;
-    color: #1f242d;
-    box-shadow: 0 0 10px #7cf03d;
 }
 
-.home-img .img-box{
-    position: relative;
-    width: 32vw;
-    height: 32vw;
-    background: #1f242d;
-    border-radius: 50%;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-left: 50px;
+@keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
 }
-.home-img .img-box .img-item{
-    position: relative;
+
+.bars-animation {
+    position: absolute;
     width: 100%;
     height: 100%;
-    background:#1f242d;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-    overflow: hidden;
-    border: .1px solid #1f242d;
-}
-.home-img .img-box .img-item img{
-    position: absolute;
-    display: block; 
-    width: 85%;
-    object-fit: cover;
-    top: 30px;
-    mix-blend-mode: lighten;
-}
-
-.bars-animation{
-    position: absolute;
-    width: 100%;
-    height:100% ;
     display: flex;
     z-index: -1;
 }
-.bars-animation .bar{
+
+.bars-animation .bar {
     width: 100%;
     height: 100%;
     background: #1f242d;
-    transform: translateY(-100%);
-    animation: show-bars .5s ease-in-out forwards;
+    transform: transform(100%);
+    animation: show-bars .5s alternate-reverse forwards;
     animation-delay: calc(.1s * var(--i));
 }
 
-/* Pseudo class */
-
-.home-img .img-box::before,
-.home-img .img-box::after {
-    content:'';
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: conic-gradient(transparent, transparent, transparent, #7cf03d);
-    transform: rotate();
-    padding: 10px;
-    transform: rotate(0deg);
-    animation: rotate-border 10s linear infinite;
-}
-.home-info h2 span::before{
-    content: attr(data-text);
-   position: absolute;
-   width: 0;
-   border-right:2px solid #7cf03d ;
-   color:#7cf03d;
-   white-space: nowrap;
-   overflow: hidden;
-   animation: fill-text 4s linear infinite;
-}
-.navbar ul li:hover a,
-.navbar ul li.active a{
-    color: #7cf03d;
-}
-
-/* keyframes */
-
 @keyframes show-bars {
-       100%{
-        transform: translateY(0%);
-       }
-} 
-@keyframes fill-text{
-    10%,100%{
-        width: 0;
-    }
-    70%,90%{
-      width: 100%;  
-    }
-}
-@keyframes rotate-border{
-    100%{
-        transform: rotate(360deg);
-    }
-}
-@keyframes display-text{
-    25%,100%{
-      display: none;
-    }
-}
-@keyframes show-content {
-    100%{
-        visibility: visible;
-        opacity: 1;
+    100% {
+        transform: matrix(1, 0.5, 0.5, 1, 50, 100);
     }
 }

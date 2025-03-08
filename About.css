@@ -64,22 +64,27 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: grid;
     z-index: -1;
 }
 
-.bars-animation .bar {
+ .bar {
+    
     width: 100%;
     height: 100%;
     background: #1f242d;
-    transform: transform(100%);
-    animation: show-bars .5s alternate-reverse forwards;
+    animation: show-bars .5s ease forwards;
     animation-delay: calc(.1s * var(--i));
 }
 
 @keyframes show-bars {
+    0%{
+        transform: translateX(0);
+        opacity: 0;
+    }
     100% {
-        transform: translateY(-40%);
+        transform:translateX(-0%);
+        
     }
 }
 
