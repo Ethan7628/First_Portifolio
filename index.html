@@ -2,290 +2,200 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description"
-      content="Ethan Kusasirakwe's personal website. Learn about Ethan's education, skills, certifications, projects, and contact information.">
-   <title>Ethan Kusasirakwe - Online Resume</title>
-   <link rel="stylesheet" href="style.css">
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kusasirakwe Ethan</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-   <div class="container">
-      <header>
-         <h1>Welcome to Ethan's Online Resume</h1>
-         <nav>
-            <ul>
-               <li><a href="#about">About Me</a></li>
-               <li><a href="#education">Education</a></li>
-               <li><a href="#skills">Skills</a></li>
-               <li><a href="#certifications">Certifications</a></li>
-               <li><a href="#projects">Projects</a></li>
-               <li><a href="#contact">Contact</a></li>
-            </ul>
-         </nav>
- 
-         <button id="theme-toggle" aria-label="Toggle Dark Mode">
-            <i class="fas fa-moon"></i> 
-         </button>
-      </header>
-      <main>
- 
-         <section id="about">
-            <h1>About Me</h1>
-            <div class="intro">
-               <img src="./1720190267.933666_102IMG_4617.jpg" alt="Ethan Kusasirakwe's profile picture"
-                  class="profile-img">
-               <p>
-                  Hi, I'm <em><strong>Ethan Kusasirakwe</strong></em>, a budding web developer with a passion for
-                  technology.
-                  I'm constantly learning new skills and enhancing my web development abilities. I enjoy creating
-                  clean, user-friendly web experiences and am currently focusing on front-end development.
-               </p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">Portfolio.</a>
+        <ul>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="home-info">
+            <h1>Kusasirakwe Ethan</h1>
+            <h2>I'm a
+                <span style="--i:4;" data-text="FullStack Developer"> FullStack Developer</span>
+                <span style="--i:3;" data-text="Designer"> Designer</span>
+                <span style="--i:2;" data-text="Youtuber"> Youtuber</span>
+                <span style="--i:1;" data-text="Blogger"> Blogger</span>
+            </h2>
+            <p>I'm a passionate full-stack web developer and designer dedicated to building seamless,
+                visually appealing, and high-performing web applications. With expertise in HTML, CSS, JavaScript, and
+                modern frameworks, I create responsive and user-friendly websites that bring ideas to life.</p>
+
+            <div class="btn-sci">
+                <a href="#about" class="btn">More Information</a>
+                <div class="sci">
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                    <a href="#"><i class='bx bxl-whatsapp-square'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
             </div>
-         </section>
-
-  
-         <section id="education">
-            <h1>Education</h1>
-            <table>
-               <thead>
-                  <tr>
-                     <th>Schools</th>
-                     <th>Years Attended</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr>
-                     <td>Quality Primary Schools</td>
-                     <td>2010 - 2016</td>
-                  </tr>
-                  <tr>
-                     <td>Janan Secondary Schools</td>
-                     <td>2017 - 2023</td>
-                  </tr>
-                  <tr>
-                     <td>Odyssey Technologies</td>
-                     <td>2024 - 2025</td>
-                  </tr>
-               </tbody>
-            </table>
-         </section>
-
-       
-         <section id="skills">
-            <h1>Skills</h1>
-            <div class="skills-list">
-               <ul>
-                  <li><strong>Front-End Development</strong>: HTML, CSS, JavaScript, React (Certified by Mimo)</li>
-                  <li><strong>Back-End Development</strong>: Node.js, Express.js, SQL (Certified by Mimo)</li>
-                  <li><strong>Full-Stack Development</strong>: HTML, CSS, JavaScript, React, Node.js, Express.js, SQL
-                     (Certified by Mimo)</li>
-                  <li><strong>Database Management</strong>: SQL (Certified by Mimo)</li>
-                  <li><strong>JavaScript</strong>: Core programming concepts (Certified by Mimo)</li>
-                  <li><strong>Web Styling</strong>: CSS (Certified by Mimo)</li>
-                  <li><strong>Web Structure</strong>: HTML (Certified by Mimo)</li>
-               </ul>
+        </div>
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="./Ethan.png" alt="Ethan">
+                </div>
             </div>
-         </section>
+        </div>
+    </section>
 
-         <section id="certifications">
-            <h1>Certifications</h1>
-            <h2>Professional Certificates</h2>
-            <div class="certifications-grid">
-               <div class="certification">
-                  <h4>Full-Stack Development Certification</h4>
-                  <img src="full-stack-cert-thumbnail.jpg" alt="Full-Stack Certification" class="cert-thumbnail">
-                  <a href="FULL_STACK_DEVELOPMENT_CERTIFICATE.pdf" class="view-cert">View Certificate</a>
-               </div>
+    <!-- About Section -->
+    <section id="about" class="about">
 
-              
-               <div class="certification">
-                  <h4>Back-End Development Certification</h4>
-                  <img src="back-end-cert-thumbnail.jpg" alt="Back-End Certification" class="cert-thumbnail">
-                  <a href="BACK_END_DEVELOPMENT_CERTIFICATE.pdf" class="view-cert">View Certificate</a>
-               </div>
 
-              
-               <div class="certification">
-                  <h4>Front-End Development Certification</h4>
-                  <img src="front-end-cert-thumbnail.jpg" alt="Front-End Certification" class="cert-thumbnail">
-                  <a href="FRONT_END_DEVELOPMENT_CERTIFICATE.pdf" class="view-cert">View Certificate</a>
-               </div>
+
+        <img src="./IMG_0046.jpg" alt="Ethan Kusasirakwe" class="img">
+
+
+
+        <div class="about-info">
+            <h2>
+                <span style="--i:4" data-text="Here is More Information, ">Here is More Information,</span>
+                <span style="--i:3" data-text="About Me">About Me</span>
+                <span style="--i:2" data-text="The Languages I Serve">The Languages I Serve</span>
+                <span style="--i:1" data-text="About Me">About Me</span>
+            </h2>
+            <p>
+                I'm Ethan Kusasirakwe, a passionate full-stack web developer and designer dedicated to building
+                seamless, visually appealing, and high-performing web applications. With expertise in HTML, CSS,
+                JavaScript, and modern frameworks, I create responsive and user-friendly websites that bring ideas to
+                life.<br><br>
+                My skill set covers both front-end and back-end development, allowing me to craft complete
+                solutions—from designing engaging interfaces to ensuring robust functionality with databases and
+                server-side logic. I prioritize clean code, performance optimization, and intuitive user experiences to
+                deliver high-quality digital products.<br><br>
+                Beyond development, I have a keen eye for UI/UX design, ensuring every project is not only functional
+                but also visually compelling. Whether working on personal projects, client solutions, or innovative
+                business ideas, I'm always eager to learn, improve, and push the boundaries of web development.<br><br>
+                Let's build something amazing together!
+            </p>
+            <a href="#certificates" class="btn">View Certificates</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title">My <span>Portfolio</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="./Screenshot 2025-04-12 184039.png" alt="iOS Calculator">
+                
+                <div class="portfolio-layer">
+                    <h4>iOS Calculator</h4>
+                    <p>A fully functional iOS-style calculator with all standard operations.</p>
+                    <a href="https://github.com/Ethan7628/IOS-calculator.git"><i class='bx bx-link-external'></i></a>
+                </div>
+                
+
             </div>
-            <h2>Completion Certificates</h2>
-            
-               <div class="certifications-grid">
-               
-                  <div class="certification">
-                     <h4>React Certification</h4>
-                     <img src="react-cert-thumbnail.jpg" alt="React Certification" class="cert-thumbnail">
-                     <a href="Mimo React Certification.pdf" class="view-cert">View Certificate</a>
-                  </div>
 
-           
-                  <div class="certification">
-                     <h4>SQL Certification</h4>
-                     <img src="sql-cert-thumbnail.jpg" alt="SQL Certification" class="cert-thumbnail">
-                     <a href="SQL_CERTIFICATE.pdf" class="view-cert">View Certificate</a>
-                  </div>
-
-         
-                  <div class="certification">
-                     <h4>JavaScript Certification</h4>
-                     <img src="javascript-cert-thumbnail.jpg" alt="JavaScript Certification" class="cert-thumbnail">
-                     <a href="JAVASCRIPT_CERTIFICATE.pdf" class="view-cert">View Certificate</a>
-                  </div>
-
-   
-                  <div class="certification">
-                     <h4>HTML Certification</h4>
-                     <img src="html-cert-thumbnail.jpg" alt="HTML Certification" class="cert-thumbnail">
-                     <a href="HTML_CERTIFICATE.pdf" class="view-cert">View Certificate</a>
-                  </div>
-
- 
-                  <div class="certification">
-                     <h4>CSS Certification</h4>
-                     <img src="css-cert-thumbnail.jpg" alt="CSS Certification" class="cert-thumbnail">
-                     <a href="CSS_CERTIFICATE.pdf" class="view-cert">View Certificate</a>
-                  </div>
-               </div>
-          
-         </section>
-
-
-         <section id="projects">
-            <h1>Projects</h1>
-            <div class="project">
-               <h3>Personal Portfolio Website</h3>
-               <p>A responsive personal website built using HTML, CSS, and JavaScript to showcase my skills and
-                  projects.</p>
-               <a href="#" target="_blank">View Project</a>
+            <div class="portfolio-box">
+                <img src="./6306486.jpg" alt="Background Changer">
+                <div class="portfolio-layer">
+                    <h4>Background Changer</h4>
+                    <p>Interactive tool that allows users to change random background colors.
+                    </p>
+                    <a href="https://github.com/Ethan7628/BackGround-Changer.git"><i class='bx bx-link-external'></i></a>
+                </div>
             </div>
-            <div class="project">
-               <h3>To-Do List App</h3>
-               <p>A simple to-do list application built with JavaScript to help users manage their daily tasks.</p>
-               <a href="#" target="_blank">View Project</a>
+
+            <div class="portfolio-box">
+                <img src="./Screenshot 2025-04-12 182641.png" alt="Meme Generator">
+                <div class="portfolio-layer">
+                    <h4>Meme Generator</h4>
+                    <p>Create custom memes by adding text to popular memes with drag-and-drop functionality.</p>
+                    <a href="https://github.com/Ethan7628/Meme-Generator.git"><i class='bx bx-link-external'></i></a>
+                </div>
             </div>
-         </section>
 
-         <section id="contact">
-            <h1>Contact</h1>
-            <form action="mailto:kusasirakwe.ethan.upti@gmail.com" method="post" enctype="text/plain"
-               autocapitalize="on">
-               <label for="name">Your Name:</label><br>
-               <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+            <div class="portfolio-box">
+                <img src="./Screenshot 2025-04-12 182213.png" alt="GIF Generator">
+                <div class="portfolio-layer">
+                    <h4>GIF Generator</h4>
+                    <p>Generate animated GIFs from video clips with customizable duration and frame rate.</p>
+                    <a href="https://github.com/Ethan7628/Gify-giphy-generator.git"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
 
-               <label for="phone">Contact:</label><br>
-               <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br>
+            <div class="portfolio-box">
+                <img src="./Screenshot 2025-04-12 185858.png" alt="GIF Generator">
+                <div class="portfolio-layer">
+                    <h4>Unit Convertor</h4>
+                    <p>Converts different units to other units</p>
+                    <a href="https://github.com/Ethan7628/Unit-Converter.git"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-               <label for="email">Your Email:</label><br>
-               <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <h2 class="section-title">My <span>Certificates</span></h2>
 
-               <label for="message">Your Message:</label><br>
-               <textarea id="message" name="message" rows="5" placeholder="Type your message here"
-                  required></textarea><br>
+        <div class="certificates-container">
+            <div class="certificate-box">
+                <h3>Full Stack Development</h3>
+                <p>Completed intensive full stack development course covering front-end and back-end technologies.</p>
+                <a href="https://www.virtualbadge.io/certificate-validator?credential=415ea629-fe0f-417d-80c4-d81f369d2a33" class="btn">View Certificate</a>
+            </div>
 
-               <button type="submit">Send Message</button>
-            </form>
-         </section>
-      </main>
-      <footer role="contentinfo">
-         <p>Connect with me on socials</p>
-         <ul>
-            <li><a href="https://wa.me/qr/AN54GC7SD3FVL1" target="_blank" aria-label="Connect with Ethan on WhatsApp"><i
-                     class="fa-brands fa-whatsapp" aria-hidden="true" style="color: green;"></i>Whatsapp</a></li>
-            <li><a href="https://tiktok.com/@7628ethan" target="_blank" aria-label="Follow Ethan on TikTok"><i
-                     class="fa-brands fa-tiktok" aria-hidden="true" style="color: #f3f5f7;"></i>Tiktok</a></li>
-            <li><a href="https://instagram.com/7628ethan" target="_blank" aria-label="Follow Ethan on Instagram"><i
-                     class="fa-brands fa-instagram" aria-hidden="true"
-                     style="color: rgb(232, 35, 35);"></i>Instagram</a></li>
-            <li><a href="https://twitter.com/@7628ethan" target="_blank" aria-label="Follow Ethan on Twitter"><i
-                     class="fa-brands fa-square-twitter" aria-hidden="true" style="color: #74C0FC;"></i>Twitter</a></li>
-         </ul>
-         <small>&copy; Ethan Kusasirakwe 2024</small>
-      </footer>
-   </div>
+            <div class="certificate-box">
+                <h3>Back-End Development</h3>
+                <p>Mastered advanced JavaScript concepts including ES6+, async programming, and design patterns.</p>
+                <a href="https://www.virtualbadge.io/certificate-validator?credential=7cc7d6f4-ad9d-4fb4-bdd7-1786b2819ffb" class="btn">View Certificate</a>
+            </div>
 
+            <div class="certificate-box">
+                <h3>UI/UX Design</h3>
+                <p>Certified in user interface and experience design principles and best practices.</p>
+                <a href="https://www.virtualbadge.io/certificate-validator?credential=f82472e6-5461-4622-b39f-96b34074e157" class="btn">View Certificate</a>
+            </div>
 
-   <div id="cert-modal" class="modal">
-      <div class="modal-content">
-         <span class="close">&times;</span>
-         <embed id="cert-embed" src="" width="100%" height="500px">
-         <a id="download-link" href="#" download class="download-cert">Download Certificate</a>
-      </div>
-   </div>
+            <div class="certificate-box">
+                <h3>Responsive Design</h3>
+                <p>Certified in user interface and experience design principles and best practices.</p>
+                <a href="https://freecodecamp.org/certification/7628Ethan/responsive-web-design" class="btn">View Certificate</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact <span>Me</span></h2>
 
-   <script>
-
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-               behavior: 'smooth'
-            });
-         });
-      });
-
-      const modal = document.getElementById('cert-modal');
-      const certEmbed = document.getElementById('cert-embed');
-      const downloadLink = document.getElementById('download-link');
-      const closeBtn = document.querySelector('.close');
-
-      document.querySelectorAll('.view-cert').forEach(link => {
-         link.addEventListener('click', function (e) {
-            e.preventDefault();
-            certEmbed.src = this.href;
-            downloadLink.href = this.href;
-            downloadLink.download = this.href.split('/').pop();
-            modal.style.display = 'block';
-         });
-      });
-
-      closeBtn.addEventListener('click', () => {
-         modal.style.display = 'none';
-      });
-
-      window.addEventListener('click', (e) => {
-         if (e.target === modal) {
-            modal.style.display = 'none';
-         }
-      });
-
-
-
-      const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-         body.classList.add(savedTheme);
-         updateToggleIcon(savedTheme);
-      }
-
-
-      themeToggle.addEventListener('click', () => {
-         body.classList.toggle('dark-mode');
-         const isDarkMode = body.classList.contains('dark-mode');
-         localStorage.setItem('theme', isDarkMode ? 'dark-mode' : '');
-         updateToggleIcon(isDarkMode ? 'dark-mode' : '');
-      });
-
-      function updateToggleIcon(theme) {
-         const icon = themeToggle.querySelector('i');
-         if (theme === 'dark-mode') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-         } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-         }
-      }
-   </script>
+        <form action="#" class="contact-form">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea cols="15" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+   <p id="futa">&copy;  2025 Ethan Kusasirakwe</p> 
+    <script src="./scripts.js"></script>
 </body>
 
 </html>
