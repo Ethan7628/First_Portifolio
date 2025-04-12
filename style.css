@@ -614,3 +614,272 @@ section.show {
     color: rgb(135, 130, 130);
     font-size: small;
 }
+
+/* For tablets and smaller desktops */
+@media (max-width: 992px) {
+    .home, .about {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .home-info, .about-info {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .home-img, .about-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-box, .img {
+        width: 60vw;
+        height: 60vw;
+    }
+
+    .home-info .btn-sci {
+        justify-content: center;
+    }
+
+    .portfolio-box {
+        height: 250px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar .logo {
+        font-size: 24px;
+    }
+
+    .navbar ul li {
+        margin-left: 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+    }
+
+    .home-info h1 {
+        font-size: 36px;
+    }
+
+    .home-info h2, .about-info h2 span {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 20px;
+    }
+
+    .portfolio-layer p {
+        font-size: 14px;
+    }
+
+    .certificate-box h3 {
+        font-size: 20px;
+    }
+
+    .certificate-box p {
+        font-size: 14px;
+    }
+}
+
+/* For small mobile devices */
+@media (max-width: 576px) {
+    .navbar ul li {
+        margin-left: 12px;
+    }
+
+    .home-info h1 {
+        font-size: 32px;
+    }
+
+    .home-info h2, .about-info h2 span {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .img-box, .img {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .portfolio-container, .certificates-container {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-box {
+        height: 200px;
+    }
+
+    .contact-form .input-box input {
+        width: 100%;
+    }
+}
+
+/* For very small devices */
+@media (max-width: 400px) {
+    .home-info h1 {
+        font-size: 28px;
+    }
+
+    .home-info h2, .about-info h2 span {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 18px;
+    }
+
+    .portfolio-layer a {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .portfolio-layer a i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .navbar ul {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(31, 36, 45, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 20px 0;
+        z-index: 999;
+    }
+    
+    .navbar ul.active {
+        left: 0;
+    }
+    
+    .navbar ul li {
+        margin: 15px 0;
+    }
+    
+    .navbar ul li a {
+        font-size: 18px;
+    }
+    
+    .navbar ul li a::after {
+        display: none;
+    }
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(31, 36, 45, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.5s ease;
+        padding: 20px 0 40px;
+        z-index: 999;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-item {
+        margin: 15px 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
