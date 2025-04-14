@@ -121,3 +121,85 @@ window.addEventListener('scroll', () => {
         document.body.style.overflow = 'auto';
     }
 });
+// Portfolio Slider Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.slider-container');
+    const slides = document.querySelectorAll('.portfolio-slide');
+    const prevBtn = document.querySelector('.prev-arrow');
+    const nextBtn = document.querySelector('.next-arrow');
+    const dotsContainer = document.querySelector('.slider-dots');
+    
+    let currentIndex = 0;
+    const slideCount = slides.length;
+    
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if(index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = document.querySelectorAll('.dot');
+    
+    // Update slider position
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        if(currentIndex >= slideCount) currentIndex = 0;
+        if(currentIndex < 0) currentIndex = slideCount - 1;
+        updateSlider();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentIndex++;
+        if(currentIndex >= slideCount) currentIndex = 0;
+        updateSlider();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentIndex--;
+        if(currentIndex < 0) currentIndex = slideCount - 1;
+        updateSlider();
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Auto-slide (optional)
+    let slideInterval = setInterval(nextSlide, 5000);
+    
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    slider.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
+});
+
+
+const ranges = document.querySelectorAll('#ranges input[type="range"]');
+
+  ranges.forEach(range => {
+    function updateBackground() {
+      const value = range.value;
+      const min = range.min || 0;
+      const max = range.max || 100;
+      const percentage = ((value - min) / (max - min)) * 100;
+
+      range.style.background = `linear-gradient(to right, #4CAF50 ${percentage}%, #ddd ${percentage}%)`;
+    }
+
+    updateBackground();
+    range.addEventListener('input', updateBackground);
+  });
