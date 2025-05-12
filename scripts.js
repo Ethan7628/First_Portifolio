@@ -88,7 +88,7 @@ window.addEventListener('load', function () {
     }
 });
 
-// Mobile Menu Toggle
+// Mobile Menu Toggle - CORRECTED VERSION
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -97,14 +97,10 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     
     // Toggle body scroll when menu is open
-    if(navMenu.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
 });
 
-// Close menu when clicking a link
+// Close menu when clicking a link or scrolling
 document.querySelectorAll('.nav-item a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -113,14 +109,14 @@ document.querySelectorAll('.nav-item a').forEach(link => {
     });
 });
 
-// Close menu when scrolling on mobile
 window.addEventListener('scroll', () => {
-    if(window.innerWidth <= 768) {
+    if (navMenu.classList.contains('active')) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
 });
+
 // Portfolio Slider Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.slider-container');
