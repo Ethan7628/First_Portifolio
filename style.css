@@ -895,6 +895,7 @@ label {
 
     /* portifolio */
     .portfolio p {
+        font-size: 16px;
         text-align: left;
     }
 
