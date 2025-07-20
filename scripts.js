@@ -91,13 +91,24 @@ window.addEventListener('load', function () {
 // Mobile Menu Toggle - CORRECTED VERSION
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const body = document.body;
 
-hamburger.addEventListener('click', () => {
+function toggleMenu() {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     
     // Toggle body scroll when menu is open
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+    body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+}
+
+hamburger.addEventListener('click', toggleMenu);
+
+// Add keyboard support for hamburger menu
+hamburger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+    }
 });
 
 // Close menu when clicking a link or scrolling
@@ -105,7 +116,7 @@ document.querySelectorAll('.nav-item a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        body.style.overflow = 'auto';
     });
 });
 
@@ -113,7 +124,7 @@ window.addEventListener('scroll', () => {
     if (navMenu.classList.contains('active')) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        body.style.overflow = 'auto';
     }
 });
 
