@@ -1,7 +1,7 @@
 // Highlight active navigation item based on scroll position
 window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('.navbar ul li');
+    const navItems = document.querySelectorAll('.nav-menu .nav-item, .mobile-nav .nav-item');
     const navbar = document.querySelector('.navbar');
 
     // Add scrolled class to navbar
@@ -90,15 +90,15 @@ window.addEventListener('load', function () {
 
 // Mobile Menu Toggle - CORRECTED VERSION
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const mobileNav = document.querySelector('.mobile-nav');
 const body = document.body;
 
 function toggleMenu() {
     hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    mobileNav.classList.toggle('active');
     
     // Toggle body scroll when menu is open
-    body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+    body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
 }
 
 hamburger.addEventListener('click', toggleMenu);
@@ -112,101 +112,107 @@ hamburger.addEventListener('keydown', (e) => {
 });
 
 // Close menu when clicking a link or scrolling
-document.querySelectorAll('.nav-item a').forEach(link => {
+document.querySelectorAll('.mobile-nav .nav-item a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        mobileNav.classList.remove('active');
         body.style.overflow = 'auto';
     });
 });
 
 window.addEventListener('scroll', () => {
-    if (navMenu.classList.contains('active')) {
+    if (mobileNav.classList.contains('active')) {
         hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        mobileNav.classList.remove('active');
         body.style.overflow = 'auto';
     }
 });
 
-// Portfolio Slider Functionality
+// Typing Animation
 document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.slider-container');
-    const slides = document.querySelectorAll('.portfolio-slide');
-    const prevBtn = document.querySelector('.prev-arrow');
-    const nextBtn = document.querySelector('.next-arrow');
-    const dotsContainer = document.querySelector('.slider-dots');
+    const typingText = document.getElementById('typing-text');
+    const texts = ['FullStack Developer', 'Designer', 'Youtuber', 'Blogger'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
     
-    let currentIndex = 0;
-    const slideCount = slides.length;
-    
-    // Create dots
-    slides.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        if(index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-    
-    const dots = document.querySelectorAll('.dot');
-    
-    // Update slider position
-    function updateSlider() {
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function typeText() {
+        const currentText = texts[textIndex];
         
-        // Update dots
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
+        if (isDeleting) {
+            typingText.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingText.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        
+        let typeSpeed = isDeleting ? 50 : 100;
+        
+        if (!isDeleting && charIndex === currentText.length) {
+            typeSpeed = 2000; // Pause at end
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typeSpeed = 500; // Pause before next word
+        }
+        
+        setTimeout(typeText, typeSpeed);
     }
     
-    // Go to specific slide
-    function goToSlide(index) {
-        currentIndex = index;
-        if(currentIndex >= slideCount) currentIndex = 0;
-        if(currentIndex < 0) currentIndex = slideCount - 1;
-        updateSlider();
-    }
-    
-    // Next slide
-    function nextSlide() {
-        currentIndex++;
-        if(currentIndex >= slideCount) currentIndex = 0;
-        updateSlider();
-    }
-    
-    // Previous slide
-    function prevSlide() {
-        currentIndex--;
-        if(currentIndex < 0) currentIndex = slideCount - 1;
-        updateSlider();
-    }
-    
-    // Event listeners
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-    
-    // Auto-slide (optional)
-    let slideInterval = setInterval(nextSlide, 5000);
-    
-    // Pause on hover
-    slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    slider.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
+    typeText();
 });
 
+// Skills Animation
+const skillsSection = document.querySelector('#portfolio');
+const skillItems = document.querySelectorAll('.skill-item');
+let skillsAnimated = false;
 
-const ranges = document.querySelectorAll('#ranges input[type="range"]');
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !skillsAnimated) {
+            skillsAnimated = true;
+            
+            // Animate skill bars
+            document.querySelectorAll('.skill-progress').forEach(progress => {
+                const width = progress.getAttribute('data-width');
+                setTimeout(() => {
+                    progress.style.width = width + '%';
+                }, 500);
+            });
+        }
+    });
+}, { threshold: 0.5 });
 
-  ranges.forEach(range => {
-    function updateBackground() {
-      const value = range.value;
-      const min = range.min || 0;
-      const max = range.max || 100;
-      const percentage = ((value - min) / (max - min)) * 100;
+if (skillsSection) {
+    skillsObserver.observe(skillsSection);
+}
 
-      range.style.background = `linear-gradient(to right, #4CAF50 ${percentage}%, #ddd ${percentage}%)`;
+// Form Enhancement
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation and submission feedback
+            const submitBtn = form.querySelector('.btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitBtn.textContent = 'Message Sent!';
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    form.reset();
+                }, 2000);
+            }, 1000);
+        });
     }
-
-    updateBackground();
-    range.addEventListener('input', updateBackground);
-  });
+});
