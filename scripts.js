@@ -191,7 +191,7 @@ if (skillsSection) {
 
 // Form Enhancement
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.contact-form');
+    const form = document.querySelector('#contact-form');
     
     if (form) {
         form.addEventListener('submit', function(e) {
@@ -214,5 +214,53 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 2000);
             }, 1000);
         });
+        
+        // Mobile form improvements
+        const inputs = form.querySelectorAll('.form-input, .form-textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                // Prevent zoom on iOS
+                if (window.innerWidth < 768) {
+                    document.querySelector('meta[name=viewport]').setAttribute('content', 
+                        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+                }
+            });
+            
+            input.addEventListener('blur', function() {
+                // Restore normal viewport
+                if (window.innerWidth < 768) {
+                    document.querySelector('meta[name=viewport]').setAttribute('content', 
+                        'width=device-width, initial-scale=1.0');
+                }
+            });
+        });
     }
+});
+
+// Mobile viewport height fix
+function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', () => {
+    setTimeout(setVH, 100);
+});
+
+// Prevent horizontal scroll
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for horizontal overflow
+    function checkOverflow() {
+        const body = document.body;
+        const html = document.documentElement;
+        
+        if (body.scrollWidth > window.innerWidth || html.scrollWidth > window.innerWidth) {
+            console.warn('Horizontal overflow detected');
+        }
+    }
+    
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
 });
