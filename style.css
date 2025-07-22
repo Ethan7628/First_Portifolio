@@ -800,50 +800,6 @@ section.show {
     transition: transform var(--transition-slow);
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
-
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(124, 240, 61, 0.8), rgba(92, 184, 43, 0.8));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--transition-base);
-}
-
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 5rem;
-    height: 5rem;
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--radius-full);
-    color: white;
-    font-size: var(--text-xl);
-    text-decoration: none;
-    transition: all var(--transition-bounce);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.project-link:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.3);
-}
-
 .project-content {
     padding: var(--space-5);
     width: 100%;
